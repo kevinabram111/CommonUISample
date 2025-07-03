@@ -3,25 +3,26 @@
 
 import UIKit
 
-enum AssetImage: String {
-    case sampleImage = "sample_image"
-}
-
-enum OnboardingImage: String {
-    case sampleImage = "sample_image"
-}
-
 @MainActor
-final class AssetManager {
-    static let shared = AssetManager()
+public final class AssetManager {
 
-    private init() {}
+    public static let shared = AssetManager()
 
-    func image(for asset: AssetImage) -> UIImage? {
+    public enum AssetImage: String {
+        case sampleImage = "sample_image"
+    }
+
+    public enum OnboardingImage: String {
+        case sampleImage = "sample_image"
+    }
+
+    public init() {}
+
+    public func image(for asset: AssetImage) -> UIImage? {
         return UIImage(named: asset.rawValue, in: .module, compatibleWith: nil)
     }
 
-    func onboardingImage(for asset: OnboardingImage) -> UIImage? {
+    public func onboardingImage(for asset: OnboardingImage) -> UIImage? {
         return UIImage(named: asset.rawValue, in: .module, compatibleWith: nil)
     }
 }
