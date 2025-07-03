@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "CommonUI",
+    name: "CommonUISample",
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "CommonUI",
-            targets: ["CommonUI"]),
+            name: "CommonUISample",
+            targets: ["CommonUISample"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "CommonUI",
+            name: "CommonUISample",
             resources: [
                 // Include specific files or folders
                 .process("Resources"),       // Will include everything inside
@@ -23,8 +23,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "CommonUITests",
-            dependencies: ["CommonUI"]
+            name: "CommonUISampleTests",
+            dependencies: ["CommonUISample"]
         ),
     ]
 )
